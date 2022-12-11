@@ -9,18 +9,11 @@ class Final (object):
   A Connection object for that switch is passed to the __init__ function.
   """
   def __init__ (self, connection):
-    # Keep track of the connection to the switch so that we can
-    # send it messages!
     self.connection = connection
-
-    # This binds our PacketIn event listener
     connection.addListeners(self)
 
   def do_final (self, packet, packet_in, port_on_switch, switch_id):
-    # This is where you'll put your code:
-    #   - port_on_switch represents the port on which the packet was received
-    #   - switch_id represents the id of the switch that received the packet
-    #      (for example, s1 would have switch_id == 1, s2 would have switch_id == 2, etc...)
+    
     def doPort():
       ip = packet.find('ipv4')
       src = str(ip.srcip)

@@ -19,9 +19,9 @@ adeshmu1_final_controller.py:
           ARP traffic from anywhere is flooded
           TCP traffic from Hosts are accepted 
 
-  - doPort() assigns appropriate source port for a connection
-  - accept() and acceptFlood() accepts a packet and sends to appropriate port
-  - drop() drops a packet
+      - doPort() assigns appropriate source port for a connection
+      - accept() and acceptFlood() accepts a packet and sends to appropriate port
+      - drop() drops a packet
   
       
   

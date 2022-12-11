@@ -1,23 +1,3 @@
-# Final Skeleton
-#
-# Hints/Reminders:
-# 
-# To send an OpenFlow Message telling a switch to send packets out a
-# port, do the following, replacing <PORT> with the port number over which
-# the switch should send the packets out:
-#
-#    msg = of.ofp_flow_mod()
-#    msg.match = of.ofp_match.from_packet(packet)
-#    msg.idle_timeout = 30
-#    msg.hard_timeout = 30
-#
-#    msg.actions.append(of.ofp_action_output(port = <PORT>))
-#    msg.data = packet_in
-#    self.connection.send(msg)
-#
-# To drop packets, simply omit the action.
-#
-
 from pox.core import core
 import pox.openflow.libopenflow_01 as of
 

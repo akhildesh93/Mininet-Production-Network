@@ -113,6 +113,8 @@ class Final (object):
       msg = of.ofp_flow_mod()
       msg.match = of.ofp_match.from_packet(packet)
       msg.actions.append(of.ofp_action_output(port=doPort()))
+      msg.idle_timeout = 30
+      msg.hard_timeout = 30
       msg.buffer_id = packet_in.buffer_id
       self.connection.send(msg)
 
@@ -120,12 +122,16 @@ class Final (object):
       msg = of.ofp_flow_mod()
       msg.match = of.ofp_match.from_packet(packet)
       msg.actions.append(of.ofp_action_output(port=of.OFPP_FLOOD))
+      msg.idle_timeout = 30
+      msg.hard_timeout = 30
       msg.buffer_id = packet_in.buffer_id
       self.connection.send(msg)
 
     def drop():
       msg = of.ofp_flow_mod()
       msg.match = of.ofp_match.from_packet(packet)
+      msg.idle_timeout = 30
+      msg.hard_timeout = 30
       self.connection.send(msg)
 
 

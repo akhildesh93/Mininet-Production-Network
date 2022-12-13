@@ -15,9 +15,10 @@ adeshmu1_final_controller.py:
   - For every switch that connects, sets up a firewall object
   - For each packet, configures connection status
   - based on type of packet and its source, determines whether to accept, flood, or drop the packet:
-          ex. ICMP traffic from Untrusted Host is dropped
-              ARP traffic from anywhere is flooded
-              TCP traffic from Hosts are accepted 
+              - ICMP traffic from Untrusted Host is dropped
+              - ARP traffic from anywhere is flooded
+              - TCP traffic from Hosts are accepted 
+          
 
   - doPort() assigns appropriate source port for a connection
   - accept() and acceptFlood() accepts a packet and sends to appropriate port
